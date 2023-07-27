@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title></title>
+</head>
+<body>
+<button type="button" onclick="getZone()">Find Zone</button>
+<table>
+<tr><td>Longitude</td><td><input type="number" id="lo"></td></tr>
+</table>
+<p id="zn"></p>
+<script>
+function getZone() {
+var long = document.getElementById("lo").value;
+var lon = Math.pow(long, 1);
+var inte = (Math.pow(lon, 1) + Math.pow(180, 1))/Math.pow(6, 1);
+var inte = inte.toFixed(0);
+var zone = Math.pow(1, 1) + Math.pow(inte, 1);
+
+if (lon == "") {
+document.getElementById("zn").innerHTML = "Please insert Longitude coordinate!";
+}else if (lon > 180 || lon < -180 || lon == 180 ) {
+document.getElementById("zn").innerHTML = "Longitude is out of tolerance!";
+}else
+document.getElementById("zn").innerHTML = zone;
+}
+</script>
+</body>
+</html>
